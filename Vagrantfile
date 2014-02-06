@@ -4,12 +4,10 @@ CPU_COUNT = 2
 Vagrant.configure("2") do |config|
 
   # Creates an edX fullstack VM from an official release
-  config.vm.box     = "empanada"
-  config.vm.box_url = "http://files.edx.org/vagrant-images/20131218-empanada-fullstack.box"
+  config.vm.box     = "facaccia"
+  config.vm.box_url = "http://files.edx.org/vagrant-images/20140130-focaccia-fullstack.box"
 
   config.vm.network :private_network, ip: "192.168.33.10"
-  config.vm.network "forwarded_port", guest: 80, host: 8083
-  config.vm.network "forwarded_port", guest: 18010, host: 8084
   config.hostsupdater.aliases = ["preview.localhost"]
 
   config.vm.provider :virtualbox do |vb|
